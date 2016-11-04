@@ -1,0 +1,1 @@
+define("widget/default/header/header",function(e,o,d){d.exports=function(){console.log("Js for wiget header.")}});

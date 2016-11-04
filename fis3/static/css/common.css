@@ -1,0 +1,65 @@
+.nav-item {
+    position: relative;
+    line-height: 44px;
+    padding-left: 5px;
+    float: left;
+    width: 155px;
+}
+.nav-item-del{
+    display: none;
+    position: relative;
+    float: left;
+}
+.nav-item-del:hover{
+    cursor:hand;
+}
+.nav-item-content{
+    padding-left: 5px;
+    width: 120px;
+
+    word-wrap: normal;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    position: relative;
+    float: left;
+}
+.nav-item-edit{
+    display: none;
+    float: right;
+    margin-top: 13px;
+}
+.nav-item-edit:hover{
+    cursor: hand;
+}
+.nav-item:hover{
+    background-color: rgb(245,245,245);
+}
+.text-truncate {
+  word-wrap: normal;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.td-list-title {
+  word-wrap: normal;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 150px;
+}
+.list-edit-icon{
+    cursor:hand;
+    float: right;
+}
+
+.list-edit-icon:hover{
+    display: inline;
+    cursor:hand;
+}
+.article-title{
+  padding-left: 50px;
+}
+.article-info{
+  padding-left: 100px;
+}

@@ -1,0 +1,6 @@
+/vendor
+/storage
+/resources
+Homestead.yaml
+Homestead.json
+.env

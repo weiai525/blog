@@ -1,0 +1,30 @@
+.wea-friends-group li {
+    position: relative;
+    display: block;
+    margin-bottom: -1px;
+    border: 1px solid #ddd;
+}
+.wea-friends-group last-child {
+    position: relative;
+    display: block;
+    margin-bottom: 0px;
+    border: 1px solid #ddd;
+}
+.wea-friends{
+    padding: 10px;
+}
+.wea-friends__left{
+    flex-basis: 60px;
+}
+.wea-friends__left img{
+    width: 60px;
+    height: 60px;
+}
+.wea-friends__right{
+    padding-left: 10px;
+}
+.wea-friends__content img{
+}
+.wea-friends__images img {
+    max-width: 30%;
+}
