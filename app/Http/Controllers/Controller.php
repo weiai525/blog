@@ -7,10 +7,11 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesResources;
+use App\Libs\ValidateTrait;
 
 class Controller extends BaseController
 {
-    use AuthorizesRequests, AuthorizesResources, DispatchesJobs, ValidatesRequests;
+    use AuthorizesRequests, AuthorizesResources, DispatchesJobs, ValidateTrait;
     
     public function success($data = null, $msg = 'sucess', $code = 0)
     {
@@ -20,7 +21,7 @@ class Controller extends BaseController
     {
         $messages = [
             '500100'=>'常规错误',
-            '500201'=>'输入的参数有误',
+            '500201'=>'请求参数有误',
             '500301'=>'系统出错了',
             '500401'=>'验证码错误',
             '500501'=>'用户名/邮箱不存在或密码错误或账号被封号',
