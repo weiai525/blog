@@ -61,7 +61,7 @@
                                 <div class="form-group" id="loginverifycode">
                                     <label for="code" class="col-sm-2 control-label">验证码</label>
                                     <div class="col-sm-5">
-                                        <input type="text" required class="form-control" autocomplete="off" name="verifycode" id="code" placeholder="验证码">
+                                        <input type="text" required class="form-control" autocomplete="off" name="captcha" id="code" placeholder="验证码">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -111,7 +111,7 @@ $('form').submit(function(e){
     var url = document.location.href;
     var data = $(this).serializeArray();
     $.ajax({
-            url:$(this).attr('action'),
+            url:url,
             async:false,
             data:data,
             type:'post',
