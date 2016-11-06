@@ -1,6 +1,8 @@
 <?php
 
 use App\Models\Auth\User;
+use App\Libs\Access;
+
 if (!function_exists('tpl')) {
     /**
      * 用法与view()一样，使用该函数自动返回当前模板下的视图
@@ -48,5 +50,20 @@ if (!function_exists('get_user_info')) {
             return $user->toArray();
         }
         return [];
+    }
+}
+
+if (!function_exists('check_access')) {
+    /**
+     * 检查权限
+     * @param rules array  需要验证的规则列表,支持逗号分隔的权限规则或索引数组
+     * @param user_id  int           认证用户的id
+     * @param type string    如果为 'or' 表示满足任一条规则即通过验证;如果为 'and'则表示需满足所有规则才能通过验证
+     * @return boolean           通过验证返回true;失败返回false
+     */
+    function check_access($u_id,$rules,$type = 'or')
+    {
+        $user  = new Access();
+        return $user->check($u_id,$rules,$type);
     }
 }
