@@ -5,12 +5,19 @@ Route::get('/ueditor_upload', 'UeditorController@index');
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['middleware' => ['web'],'prefix'=>'admin','namespace'=>'Admin'], function () {
+    Route::get('/', 'IndexController@index');
+});
 Route::group(['middleware' => ['web']], function () {
     Route::get('/test', 'TestController@index');
     Route::get('/auth/login', 'Auth\WebController@getLogin');
     Route::post('/auth/login', 'Auth\WebController@postLogin');
     Route::get('/auth/register', 'Auth\WebController@getRegister');
     Route::post('/auth/register', 'Auth\WebController@postRegister');
+    Route::get('/admin/init', 'Auth\AdminController@init');
+    Route::get('/admin/login', 'Auth\AdminController@getlogin');
+    Route::post('/admin/login', 'Auth\AdminController@postlogin');
     Route::get('logout', 'Auth\WebController@logout');
     //通用上传路由
     Route::post('upload', ['uses'=>'UploadController@index','as'=>'upload']);
